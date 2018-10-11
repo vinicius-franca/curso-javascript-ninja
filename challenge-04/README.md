@@ -46,22 +46,22 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 var carro = {
-    marca: 'Ford',
-    modelo: 'Mustang GT',
+    marca: 'Volkswagen',
+    modelo: 'Golf GTI MK6',
     placa: 'AAA-1234',
-    ano: 1986,
-    cor: 'preto',
-    quantasPortas: 2,
+    ano: 2018,
+    cor: 'Preto',
+    quantasPortas: 4,
     assentos: 5,
     quantidadePessoas: 0
-}
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 carro.mudarCor = function(cor){
-    return carro.cor = cor;
+    carro.cor = cor;
 };
 
 /*
@@ -72,7 +72,7 @@ carro.obterCor = function(){
 }
 
 /*
-Crie um método chamado `obterModelo` que retorne o modelo do carro.
+cCrie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function(){
     return carro.modelo;
@@ -110,7 +110,18 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionarPessoas = function(pessoas){
+    var totalPessoas = carro.quantidadePessoas + pessoas;
+    if(carro.quantidadePessoas === carro.assentos){
+        return 'O carro já está lotado!';
+    }
+    if (totalPessoas > carro.assentos){
+        var pessoasCabem = carro.assentos - carro.quantidadePessoas;
+        return 'Só cabem mais ' + pessoasCabem + ' pessoas!';
+    }
+    carro.quantidadePessoas += pessoas;
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -120,22 +131,22 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); //Preto
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //Vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('Verde musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // Verde musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); // Esse carro é um Volkswagen Golf GTI MK6
 
 // Adicione 2 pessoas no carro.
 ?
