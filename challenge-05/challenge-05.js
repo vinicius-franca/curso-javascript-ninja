@@ -7,8 +7,6 @@ var myVar = [true, 1, 'string', null, 2];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-var myVar = [true, 'teste', 'string', null, 2];
-
 function myFunction(arr){
   return arr;
 }
@@ -18,7 +16,7 @@ myFunction(myVar);
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(myFunction(myVar)[1]);
+console.log(myFunction(myVar)[1]); //teste
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -26,18 +24,24 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function exampleFunction(arr , i){
+  return arr[i];
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var otherVar = [10, 'texto', null, true, undefined];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log(exampleFunction(otherVar, 0));
+console.log(exampleFunction(otherVar, 1));
+console.log(exampleFunction(otherVar, 2));
+console.log(exampleFunction(otherVar, 3));
+console.log(exampleFunction(otherVar, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
