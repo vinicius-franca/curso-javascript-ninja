@@ -57,30 +57,52 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(name){
+    var obj = {
+        'Harry Potter':{
+            quantidadedePaginas: 200,
+            autor: 'J. K. Rowling',
+            editora: 'Intrinseca'
+        },
+        'Senhor dos Anéis':{
+            quantidadedePaginas: 200,
+            autor: 'Mano Brown',
+            editora: 'Abril'
+        },
+        'Pequeno Principe':{
+            quantidadedePaginas: 200,
+            autor: 'Seu Jorge',
+            editora: 'Printer IT.'
+        }
+    }
+    if(!name){
+        return obj;
+    }
+    return obj[name];
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log('O livro Harry Potter tem ' + book('Harry Potter').quantidadedePaginas + ' páginas!')
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log('O autor do livro Pequeno Principe é ' + book('Pequeno Principe').autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log('"O livro Senhor dos Anéis foi publicado pela editora ' + book('Senhor dos Anéis').editora + '.');
